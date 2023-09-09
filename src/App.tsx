@@ -13,8 +13,7 @@ function App() {
 
   const handleRightMouseClick = useCallback((e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log(e);
-    console.log("right mouse click");
+    console.log("right mouse click", e);
   }, []);
 
   return (
