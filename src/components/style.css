@@ -1,0 +1,22 @@
+.folder {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.file {
+  display: flex;
+  align-items: center;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.displayNone {
+  display: none;
+}
+
+.paddingLeft25 {
+  padding-left: 25px;
+}

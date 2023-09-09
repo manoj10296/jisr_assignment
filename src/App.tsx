@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback } from "react";
+import "./App.css";
+import Explorer from "./components/Explorer";
+import { inputData as data } from "./inputData";
+import { FileExplorer } from "./interface";
+
+const inputData: FileExplorer = data;
 
 function App() {
+  const handleLeftFileClick = useCallback((name: string) => {
+    console.log(name);
+  }, []);
+
+  const handleRightMouseClick = useCallback((e: React.SyntheticEvent) => {
+    e.preventDefault();
+    console.log("right mouse click");
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Explorer
+        explorer={inputData}
+        handleLeftFileClick={handleLeftFileClick}
+        handleRightMouseClick={handleRightMouseClick}
+      />
     </div>
   );
 }
